@@ -18,7 +18,7 @@ class DetailsScreen extends StatelessWidget {
 							const _Overview(),
 							const _Overview(),
 							const _Overview(),
-							CastingCard()
+							const CastingCard()
 						])
 					)
 				],
@@ -45,7 +45,7 @@ class _CustomAppBar extends StatelessWidget {
 					width: double.infinity,
 					color: Colors.black12,
 					alignment: Alignment.bottomCenter,
-					padding: EdgeInsets.only(bottom: 10),
+					padding: const EdgeInsets.only(bottom: 10),
 					child: const Text(
 						'movie.title',
 						style: TextStyle( fontSize: 16)
@@ -111,7 +111,7 @@ class _Overview extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) {
 		return Container(
-			padding: EdgeInsets.symmetric(horizontal:30, vertical: 10),
+			padding: const EdgeInsets.symmetric(horizontal:30, vertical: 10),
 			child: Text(
 				'Voluptate anim nostrud id nulla sit. Est cillum aute proident mollit ullamco magna. Irure sint laborum reprehenderit sit do et.Voluptate anim nostrud id nulla sit. Est cillum aute proident mollit ullamco magna. Irure sint laborum reprehenderit sit do et.', 
 				textAlign: TextAlign.justify,
