@@ -16,6 +16,7 @@ class Movie {
     bool video;
     double voteAverage;
     int voteCount;
+	String? heroId;
 
     Movie({
         required this.adult,
@@ -41,6 +42,13 @@ class Movie {
 		return 'https://i.stack.imgur.com/GNhx0.png';
 	}
 
+	get fullBackdropPath {
+		if( backdropPath != null )
+			return 'https://image.tmdb.org/t/p/w500${ backdropPath }';
+
+		return 'https://i.stack.imgur.com/GNhx0.png';
+	}
+
     factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));
 
     factory Movie.fromMap(Map<String, dynamic> json) => Movie(
@@ -53,7 +61,7 @@ class Movie {
         overview: json["overview"],
         popularity: json["popularity"].toDouble(),
         posterPath: json["poster_path"],
-        releaseDate: json["release_date"] != "" ? DateTime.parse(json["release_date"]) : null,
+        releaseDate: json["release_date"] != "" && json["release_date"] != null ? DateTime.parse(json["release_date"]) : null,
         title: json["title"],
         video: json["video"],
         voteAverage: json["vote_average"].toDouble(),
